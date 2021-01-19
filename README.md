@@ -1,3 +1,3 @@
-For more details, see:
+Fork of : https://github.com/stephenlewis/no-read-receipts
 
-https://chrome.google.com/webstore/detail/nonmcdkdhgkljdlbkfdclcemmoenfbgb/details
+Adds french locale support.

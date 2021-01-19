@@ -1,13 +1,13 @@
 popupTitles = ["read receipts requested", "confirmations de lecture demandées"];
 
-(function() {
+(function () {
   function processNodes(nodes) {
-    for(let i = 0; i < nodes.length; i++) {
+    for (let i = 0; i < nodes.length; i++) {
       const node = nodes[i];
-      if(typeof node.tagName === 'undefined' || node.tagName.toLowerCase() !== "button") {
+      if (typeof node.tagName === 'undefined' || node.tagName.toLowerCase() !== "button") {
         return;
       }
-      if(node.getAttribute("name") === "Later") {
+      if (node.getAttribute("name") === "Later") {
         const text = node.parentNode.parentNode.textContent;
         if (popupTitles.some(title => {
           return text.match(new RegExp(title, "i"));
@@ -23,5 +23,5 @@ popupTitles = ["read receipts requested", "confirmations de lecture demandées"]
       processNodes(mutation.addedNodes);
     });
   });
-  observer.observe(document, { childList: true, subtree: true });
+  observer.observe(document, {childList: true, subtree: true});
 })();

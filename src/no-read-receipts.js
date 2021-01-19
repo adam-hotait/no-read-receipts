@@ -1,3 +1,5 @@
+popupTitles = ["read receipts requested", "confirmations de lecture demandées"];
+
 (function() {
   function processNodes(nodes) {
     for(let i = 0; i < nodes.length; i++) {
@@ -7,7 +9,9 @@
       }
       if(node.getAttribute("name") === "Later") {
         const text = node.parentNode.parentNode.textContent;
-        if(text.match(/read receipts requested/i)) {
+        if (popupTitles.some(title => {
+          return text.match(new RegExp(title, "i"));
+        })) {
           node.click();
         }
       }

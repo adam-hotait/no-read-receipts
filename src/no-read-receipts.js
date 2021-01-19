@@ -14,8 +14,8 @@
     }
   }
 
-  var observer = new WebKitMutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
       processNodes(mutation.addedNodes);
     });
   });

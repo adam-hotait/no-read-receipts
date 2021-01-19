@@ -1,12 +1,12 @@
 (function() {
   function processNodes(nodes) {
-    for(var i = 0; i < nodes.length; i++) {
-      var node = nodes[i];
-      if(node.tagName !== "BUTTON") {
+    for(let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      if(typeof node.tagName === 'undefined' || node.tagName.toLowerCase() !== "button") {
         return;
       }
       if(node.getAttribute("name") === "Later") {
-        var text = node.parentNode.parentNode.innerText;
+        const text = node.parentNode.parentNode.textContent;
         if(text.match(/read receipts requested/i)) {
           node.click();
         }
